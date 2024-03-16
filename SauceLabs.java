@@ -1,4 +1,4 @@
-package project1;
+package saucelabs;
 
 
 
@@ -22,7 +22,7 @@ import jxl.Workbook;
 
 
 
-public class pomcalling {
+public class SauceLabs {
 	public FirefoxDriver driver;
 
 	
@@ -37,7 +37,7 @@ public class pomcalling {
 	
 		@Test(priority=1)
 		public void launchApp() {
-		pom p = PageFactory.initElements(driver, pom.class);
+		SauceLabsID p = PageFactory.initElements(driver, SauceLabsID.class);
 		p.uid.sendKeys("standard_user");
 		p.psd.sendKeys("secret_sauce");
 		p.btn.click();
@@ -46,7 +46,7 @@ public class pomcalling {
 	}
 		@Test(priority=2)
 		public void selecItem() {
-		pom p = PageFactory.initElements(driver, pom.class);
+		SauceLabsID p = PageFactory.initElements(driver, SauceLabsID.class);
 		//Verifying the Header of application
 		System.out.println(p.header.getText());
 		//Selecting product	
@@ -56,7 +56,7 @@ public class pomcalling {
 		
 		@Test(priority=3)
 		public void addToCart() {
-		pom p = PageFactory.initElements(driver, pom.class);
+		SauceLabsID p = PageFactory.initElements(driver, SauceLabsID.class);
 		System.out.println(p.productname.getText());
 		System.out.println(p.productdetails.getText());
 		System.out.println(p.productprice.getText());
@@ -67,7 +67,7 @@ public class pomcalling {
 		
 		@Test(priority=4)
 		public void checkOutProcess() throws IOException, Exception {
-			pom p = PageFactory.initElements(driver, pom.class);
+			SauceLabsID p = PageFactory.initElements(driver, SauceLabsID.class);
 			p.atcc.click();
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			p.chk.click();
@@ -93,7 +93,7 @@ public class pomcalling {
 		
 		@Test(priority=5)
 		public void complete() throws Exception {
-			pom p = PageFactory.initElements(driver, pom.class);
+			SauceLabsID p = PageFactory.initElements(driver, SauceLabsID.class);
 			System.out.println(p.message.getText());
 			File f = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			Files.copy(f, new File("F:\\AutomationTesting\\Assignments\\ProjectSelenium\\confirm_order.png"));

@@ -1,9 +1,9 @@
-package project1;
+package saucelabs;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class pom {
+public class SauceLabsID {
 
 	
 	@FindBy(id="user-name") WebElement uid;
